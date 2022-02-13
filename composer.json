@@ -1,0 +1,11 @@
+{
+    "name": "aguiarrdev/wc-payment-plugin",
+    "description": "Payment setup plugin for Woocommerce",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "WPP\\": "app/"
+        }
+    }
+}
