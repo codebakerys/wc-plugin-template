@@ -119,6 +119,6 @@ npm run build
 │       ├── installed.php
 │       ├── InstalledVersions.php
 │       └── LICENSE
-└── wc-payment-plugin.php
+└── wc-plugin-template.php
 
 ```

@@ -1,8 +1,8 @@
 <?php
 
-namespace WPP\Controllers;
+namespace WCPT\Controllers;
 
-use WPP\Model\Options;
+use WCPT\Model\Options;
 
 /**
  * Name: Woocommerce
@@ -64,7 +64,7 @@ class Webhooks
 			$classname = substr($this->class, $pos + 1);
 		}
 
-		$instance = WPP_PLUGIN_NAMESPACE . "\\Controllers\\Webhooks\\{$classname}";
+		$instance = WCPT_PLUGIN_NAMESPACE . "\\Controllers\\Webhooks\\{$classname}";
 
 		if ( class_exists( $instance ) ) {
 			return new $instance;

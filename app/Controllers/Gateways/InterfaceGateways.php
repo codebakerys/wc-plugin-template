@@ -1,6 +1,6 @@
 <?php
 
-namespace WPP\Controllers\Gateways;
+namespace WCPT\Controllers\Gateways;
 
 /**
  * Name: Interface Gateways

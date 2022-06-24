@@ -1,27 +1,26 @@
 <?php
 
-namespace WPP\Model;
+namespace WPT\Controllers\WordPress;
 
 /**
- * Name: Options
- * @package Model
+ * Name: Option
+ * @package Controllers/WordPress
  * @since 1.0.0
  */
-class Options
+class Option
 {
     private $prefix;
 
     public function __construct()
     {
-        $this->prefix = WPP_PLUGIN_SLUG;
+        $this->prefix = WPT_PLUGIN_SLUG;
     }
 
     /**
      * Update option
-     * @since 1.0.0
      * @param string $opt
      * @param mixed $value
-     * @return array|bool
+     * @return mixed
      */
     public function update( $opt, $value )
     {
@@ -33,10 +32,8 @@ class Options
 
     /**
      * Get option
-     * @since 1.0.0
      * @param string $opt
-     * @param mixed $value
-     * @return array|bool
+     * @return mixed
      */
     public function get( $opt )
     {
@@ -46,13 +43,11 @@ class Options
         return $result;
     }
 
-
     /**
      * Create option
-     * @since 1.0.0
      * @param string $opt
      * @param mixed $value
-     * @return array|bool
+     * @return mixed
      */
     public function create( $opt, $value )
     {
@@ -60,27 +55,5 @@ class Options
 
         $result = add_option( $option, $value );
         return $result;
-    }
-
-    /**
-     * Get gateway options
-     * @since 1.0.0
-     * @param bool|string $field
-     * @return mixed
-     */
-    public function get_gateway_option( $field = false )
-    {
-        $woo_opt = get_option( 'woocommerce_wc-plugin-payment_settings' );
-
-        if ( $field ) {
-            if ( is_array( $woo_opt ) && isset( $woo_opt[$field] ) ) {
-                $woo_opt = $woo_opt[$field];
-
-            } else {
-                $woo_opt = "";
-            }
-        }
-        
-        return $woo_opt;
     }
 }

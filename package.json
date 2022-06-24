@@ -1,9 +1,9 @@
 {
-  "name": "wc-payment-plugin",
+  "name": "wc-plugin-template",
   "version": "1.0.0",
   "description": "Payment setup plugin for Woocommerce",
   "main": "index.js",
-  "repository": "https://github.com/aguiarrdev/wc-payment-plugin",
+  "repository": "https://github.com/aguiarrdev/wc-plugin-template",
   "author": "Matheus Aguiar",
   "license": "GPL-3.0",
   "devDependencies": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace WPP\Controllers;
+namespace WCPT\Controllers;
 
 use WC_Logger;
 
@@ -28,7 +28,7 @@ class Logs
      */
     public function create_order_error( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-create-order-error-";
+      $prefix = WCPT_PLUGIN_SLUG . "-create-order-error-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 
@@ -41,7 +41,7 @@ class Logs
      */
     public function get_order_error( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-get-order-error-";
+      $prefix = WCPT_PLUGIN_SLUG . "-get-order-error-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 
@@ -54,7 +54,7 @@ class Logs
      */
     public function cancel_order_error( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-canel-order-error-";
+      $prefix = WCPT_PLUGIN_SLUG . "-canel-order-error-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 
@@ -67,7 +67,7 @@ class Logs
      */
     public function create_order_success( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-create-order-success-";
+      $prefix = WCPT_PLUGIN_SLUG . "-create-order-success-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 
@@ -80,7 +80,7 @@ class Logs
      */
     public function get_order_success( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-get-order-success-";
+      $prefix = WCPT_PLUGIN_SLUG . "-get-order-success-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 
@@ -93,7 +93,7 @@ class Logs
      */
     public function cancel_order_success( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-cancel-order-success-";
+      $prefix = WCPT_PLUGIN_SLUG . "-cancel-order-success-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 
@@ -106,7 +106,7 @@ class Logs
      */
     public function webhook_notice_success( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-webhook-notice-success-";
+      $prefix = WCPT_PLUGIN_SLUG . "-webhook-notice-success-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 
@@ -119,7 +119,7 @@ class Logs
      */
     public function webhook_notice_error( $title, $var )
     {
-      $prefix = WPP_PLUGIN_SLUG . "-webhook-notice-error-";
+      $prefix = WCPT_PLUGIN_SLUG . "-webhook-notice-error-";
 		  $this->wc->add( $prefix, "{$title} : ".print_r( $var, true ) );
     }
 

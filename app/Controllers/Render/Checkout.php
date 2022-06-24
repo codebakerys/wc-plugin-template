@@ -1,8 +1,8 @@
 <?php
 
-namespace WPP\Controllers\Render;
+namespace WCPT\Controllers\Render;
 
-use WPP\Controllers\Render;
+use WCPT\Controllers\Render;
 
 /**
  * Name: Render Checkout

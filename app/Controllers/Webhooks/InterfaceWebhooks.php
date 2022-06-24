@@ -1,6 +1,6 @@
 <?php
 
-namespace WPP\Controllers\Webhooks;
+namespace WCPT\Controllers\Webhooks;
 
 /**
  * Name: Interface Webhooks

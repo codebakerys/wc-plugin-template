@@ -1,8 +1,8 @@
 <?php
 
-namespace WPP\Controllers;
+namespace WCPT\Controllers;
 
-use WPP\Helpers\Utils;
+use WCPT\Helpers\Utils;
 
 /**
  * Name: Gateways
@@ -27,7 +27,7 @@ class Status
     private function get_new_status()
     {
         return [
-            'wc-test-payment'  => __( 'Status test', WPP_PLUGIN_SLUG ),
+            'wc-test-payment'  => __( 'Status test', WCPT_PLUGIN_SLUG ),
         ];
     }
 

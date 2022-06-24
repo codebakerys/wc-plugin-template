@@ -1,6 +1,6 @@
 <?php
 
-namespace WPP\Helpers;
+namespace WCPT\Helpers;
 
 /**
  * Name: Utils
@@ -21,7 +21,7 @@ class Utils
     {
 
         $split = str_split( $vew );
-        $namespace = WPP_PLUGIN_NAMESPACE . "\\Controllers\\$namespace\\";
+        $namespace = WCPT_PLUGIN_NAMESPACE . "\\Controllers\\$namespace\\";
         $class_name = '';
         $count = 0;
 
@@ -66,7 +66,7 @@ class Utils
     public static function plugin_payment_methods()
     {
         return [
-            'wc-payment-plugin'
+            'wc-plugin-template'
         ];
     }
 

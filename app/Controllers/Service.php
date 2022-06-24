@@ -1,6 +1,6 @@
 <?php
 
-namespace WPP\Controllers;
+namespace WCPT\Controllers;
 
 /**
  * Name: Service

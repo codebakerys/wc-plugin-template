@@ -1,11 +1,11 @@
 <?php
 
-namespace WPP\Controllers\Gateways;
+namespace WCPT\Controllers\Gateways;
 
 use WC_Payment_Gateway;
-use WPP\Controllers\Render\Checkout;
-use WPP\Controllers\Webhooks;
-use WPP\Controllers\Gateways\InterfaceGateways;
+use WCPT\Controllers\Render\Checkout;
+use WCPT\Controllers\Webhooks;
+use WCPT\Controllers\Gateways\InterfaceGateways;
 
 /**
  * Name: Billet
@@ -18,11 +18,11 @@ class Gateway extends WC_Payment_Gateway implements InterfaceGateways
 
     public function __construct() {
         
-        $this->id                 = "wc-payment-plugin";
+        $this->id                 = "wc-plugin-template";
         // $this->icon               = ## Image path 
         $this->has_fields         = false;
-        $this->method_title       = __( "Gateway Example", WPP_PLUGIN_SLUG );
-        $this->method_description = __( "Payment gateway example", WPP_PLUGIN_SLUG );
+        $this->method_title       = __( "Gateway Example", WCPT_PLUGIN_SLUG );
+        $this->method_description = __( "Payment gateway example", WCPT_PLUGIN_SLUG );
 
         $this->supports = [
             "products"
@@ -56,70 +56,70 @@ class Gateway extends WC_Payment_Gateway implements InterfaceGateways
 
         $this->form_fields = [
             "enabled" => [
-                "title"       => __( "Enable", WPP_PLUGIN_SLUG ),
-                "label"       => __( "Enable Gateway", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Enable", WCPT_PLUGIN_SLUG ),
+                "label"       => __( "Enable Gateway", WCPT_PLUGIN_SLUG ),
                 "type"        => "checkbox",
-                "description" => __( "Check this option to activate the payment method", WPP_PLUGIN_SLUG ),
+                "description" => __( "Check this option to activate the payment method", WCPT_PLUGIN_SLUG ),
                 "default"     => "no",
                 "desc_tip"    => true
             ],
 
             "title" => [
-                "title"       => __( "Title", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Title", WCPT_PLUGIN_SLUG ),
                 "type"        => "text",
-                "description" => __( "This controls the title which the user sees during checkout.", WPP_PLUGIN_SLUG ),
-                "default"     => __( "Payment setup plugin for Woocommerce", WPP_PLUGIN_SLUG ),
+                "description" => __( "This controls the title which the user sees during checkout.", WCPT_PLUGIN_SLUG ),
+                "default"     => __( "Payment setup plugin for Woocommerce", WCPT_PLUGIN_SLUG ),
                 "desc_tip"    => true
             ],
 
             "description" => [
-                "title"       => __( "Description", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Description", WCPT_PLUGIN_SLUG ),
                 "type"        => "textarea",
-                "description" => __( "This controls the description which the user sees during checkout.", WPP_PLUGIN_SLUG ),
-                "default"     => __( "Payment setup plugin for Woocommerce", WPP_PLUGIN_SLUG ),
+                "description" => __( "This controls the description which the user sees during checkout.", WCPT_PLUGIN_SLUG ),
+                "default"     => __( "Payment setup plugin for Woocommerce", WCPT_PLUGIN_SLUG ),
                 "desc_tip"    => true
             ],
 
             "consumer_key" => [
-                "title"       => __( "Consumer Key", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Consumer Key", WCPT_PLUGIN_SLUG ),
                 "type"        => "password",
-                "description" => __( "Enter your account's consumer key", WPP_PLUGIN_SLUG )
+                "description" => __( "Enter your account's consumer key", WCPT_PLUGIN_SLUG )
             ],
 
             "secret_key" => [
-                "title"       => __( "Secret Key", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Secret Key", WCPT_PLUGIN_SLUG ),
                 "type"        => "password",
-                "description" => __( "Enter your account's secret key", WPP_PLUGIN_SLUG )
+                "description" => __( "Enter your account's secret key", WCPT_PLUGIN_SLUG )
             ],
 
             "testmode" => [
-                "title"       => __( "Test mode", WPP_PLUGIN_SLUG ),
-                "label"       => __( "Enable Test Mode", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Test mode", WCPT_PLUGIN_SLUG ),
+                "label"       => __( "Enable Test Mode", WCPT_PLUGIN_SLUG ),
                 "type"        => "checkbox",
-                "description" => __( "Place the payment gateway in test mode using test API keys.", WPP_PLUGIN_SLUG ),
+                "description" => __( "Place the payment gateway in test mode using test API keys.", WCPT_PLUGIN_SLUG ),
                 "default"     => "yes",
                 "desc_tip"    => true
             ],
 
             "test_consumer_key" => [
-                "title"       => __( "Test Consumer Key", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Test Consumer Key", WCPT_PLUGIN_SLUG ),
                 "type"        => "text",
-                "description" => __( "Enter your account's test secret key", WPP_PLUGIN_SLUG )
+                "description" => __( "Enter your account's test secret key", WCPT_PLUGIN_SLUG )
             ],
 
             "test_secret_key" => [
-                "title"       => __( "Test Secret Key", WPP_PLUGIN_SLUG ),
+                "title"       => __( "Test Secret Key", WCPT_PLUGIN_SLUG ),
                 "type"        => "password",
-                "description" => __( "Enter your account's test consumer key", WPP_PLUGIN_SLUG )
+                "description" => __( "Enter your account's test consumer key", WCPT_PLUGIN_SLUG )
             ],
 
             "enable_log" => [
                 "title"       => "Logs",
-                "label"       => __( "Enable Woocommerce Logs for gateway.", WPP_PLUGIN_SLUG ),
+                "label"       => __( "Enable Woocommerce Logs for gateway.", WCPT_PLUGIN_SLUG ),
                 "type"        => "checkbox",
                 "description" => sprintf(
                     "%s<a href='admin.php?page=wc-status&tab=logs'>Woocommerce->Status->Logs</a>",
-                    __( "To View the logs click the link: ", WPP_PLUGIN_SLUG ),
+                    __( "To View the logs click the link: ", WCPT_PLUGIN_SLUG ),
                 )
             ]
         ];
@@ -138,7 +138,7 @@ class Gateway extends WC_Payment_Gateway implements InterfaceGateways
 
             if ( $this->testmode ) {
 
-                $this->description .= __( " Test mode activate! In this mode transactions are not real.", WPP_PLUGIN_SLUG );
+                $this->description .= __( " Test mode activate! In this mode transactions are not real.", WCPT_PLUGIN_SLUG );
                 $this->description  = trim( $this->description );
             }
             

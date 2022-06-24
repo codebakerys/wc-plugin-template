@@ -1,8 +1,8 @@
 <?php
 
-namespace WPP\Controllers;
+namespace WCPT\Controllers;
 
-use WPP\Controllers\Render\Notification as RenderNotification;
+use WCPT\Controllers\Render\Notification as RenderNotification;
 
 /**
  * Name: Notifications
